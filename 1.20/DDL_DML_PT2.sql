@@ -1,3 +1,4 @@
+CREATE TABLE staging.job_postings_flat AS 
 SELECT
     jpf.job_id,
     jpf.job_title_short,
@@ -14,11 +15,15 @@ SELECT
     jpf.salary_rate,
     jpf.salary_year_avg,
     jpf.salary_hour_avg,
-    cd.company_id,
-    cd.name,
-    cd.link AS company_link,
-    cd.link_google
+      cd.name,
+   
 FROM data_jobs.job_postings_fact AS jpf
 LEFT JOIN data_jobs.company_dim AS cd
-    ON jpf.company_id = cd.company_id
-LIMIT 10;
+    ON jpf.company_id = cd.company_id;
+
+    
+    
+SELECT COUNT (*)
+FROM staging.job_postings_flat;
+
+--LIMIT 10;

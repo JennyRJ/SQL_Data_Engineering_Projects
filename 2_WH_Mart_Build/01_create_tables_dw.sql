@@ -17,7 +17,7 @@ CREATE TABLE job_postings_fact (
     job_title VARCHAR,
     job_location VARCHAR,
     job_via VARCHAR,
-    job_schedule_type VARCHAR,
+    job_schedule_type VARCH  AR,
     job_work_from_home BOOLEAN,
     search_location VARCHAR,
     job_posted_date DATE,
@@ -42,3 +42,4 @@ CREATE TABLE job_postings_fact (
       SELECT table_name
       FROM information_schema.tables
       WHERE table_schema = 'main';
+
